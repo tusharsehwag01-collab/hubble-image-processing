@@ -1,25 +1,26 @@
-# Cat's Eye Nebula (NGC 6543) — Hubble Pipeline
+# Hubble Image Processing
 
-Multi-filter composite of the Cat's Eye planetary nebula from real Hubble Space Telescope data.
+Processing real Hubble Space Telescope data using Python, astropy, and professional-grade pipelines.
 
-## Filters Used
+## Targets
 
-| Filter | Emission Line | Color | 
-|--------|--------------|-------|
-| F502N | [O III] (502nm) | Blue channel |
-| F656N | Hα (656nm) | Green channel |
-| F658N | [N II] (658nm) | Red channel |
+- **Cat's Eye Nebula (NGC 6543)** — Planetary nebula, 3 narrowband filters (F502N, F656N, F658N)
+- **M51 Whirlpool Galaxy** — Face-on spiral, 3 broadband filters (F439W, F555W, F814W)
+- **Orion Nebula (M42)** — Star-forming region (attempted)
+- **Jupiter** — WFC3/UVIS narrowband (attempted)
 
 ## Pipeline Steps
 
-1. Download from MAST archive via astroquery
-2. EXPTIME normalization
+1. MAST archive query via astroquery
+2. FITS download and EXPTIME normalization
 3. Cosmic ray rejection (astroscrappy)
-4. Background subtraction (photutils)
-5. Median stacking
-6. AsinhStretch per channel
-7. RGB composite with make_lupton_rgb
+4. Background subtraction (photutils Background2D)
+5. WCS reprojection for alignment
+6. Median stacking per filter
+7. AsinhStretch per channel
+8. RGB composite via make_lupton_rgb
+9. HDR core blend for bright targets
 
-## Data Source
+## Tools
 
-Proposal 05403, WFPC2/PC instrument, Hubble Space Telescope.
+Python · astropy · astroquery · numpy · scipy · matplotlib · photutils · astroscrappy · reproject · FITS Liberator
