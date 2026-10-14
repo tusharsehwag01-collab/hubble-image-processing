@@ -1,17 +1,23 @@
-# M51 — Whirlpool Galaxy (Hubble Data)
+# M51 · Whirlpool Galaxy research notes
 
-Three-filter broadband color composite of the Whirlpool Galaxy.
+These notes record the three-filter broadband composite explored in the Hubble-learning project. **This file is a research note, not an executable M51 pipeline.** No M51 processing script, FITS dataset or rendered composite is included in the current public repository.
 
-## Data
+## Recorded filter mapping
 
-| Filter | Wavelength | Channel |
-|--------|-----------|---------|
-| F439W | 439nm (blue) | Blue — young star clusters |
-| F555W | 555nm (green) | Green — overall starlight |
-| F814W | 814nm (near-IR) | Red — old stars + dust |
+- **F439W** → blue: shorter-wavelength structure and young star clusters.
+- **F555W** → green: the middle visible channel.
+- **F814W** → red: the longer-wavelength / near-infrared channel.
 
-## Source
+These are display-channel choices, not a claim of exact human-eye colour or quantitative calibration.
 
-Proposal 07375, WFPC2/PC instrument, Hubble Space Telescope.
+## Recorded source context
 
-All three filters from the same pointing — pre-aligned.
+The earlier project notes identify **Hubble proposal 07375, WFPC2/PC**, with the three filters from the same pointing. Those notes describe them as pre-aligned. Inspect the actual FITS headers and WCS before relying on that assumption in a new run; matching pointing alone does not verify pixel alignment.
+
+No new archive download or scientific validation was performed in this documentation update.
+
+## Continue from here
+
+- [Repository overview and limitations](README.md)
+- [Published Cat's Eye H-alpha experiment](build_catseye_final.py) — a different target, not a substitute M51 implementation.
+- [Tushar's project profile](https://github.com/tusharsehwag01-collab)
